@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.alexmirkovic99-hue.system-stats",
+  "name": "System stats",
+  "version": "1.0.0",
+  "author": "Aleksa",
+  "license": "MIT",
+  "description": "Total CPU, RAM, GPU and VRAM usage with CPU/GPU temperatures in the bar, in colours that follow your theme or a palette you pick",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "SystemStats.qml"
+  },
+  "barWidget": {
+    "displayName": "System stats",
+    "description": "CPU, RAM, GPU and VRAM usage with temperatures (Celsius); click to choose a colour palette",
+    "category": "System",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "schema": [
+      {
+        "key": "showTemps",
+        "type": "boolean",
+        "label": "Show temperatures",
+        "description": "Show CPU and GPU temperatures in Celsius next to the usage.",
+        "defaultValue": true
+      },
+      {
+        "key": "intervalMs",
+        "type": "integer",
+        "label": "Refresh interval (ms)",
+        "min": 1000,
+        "max": 10000,
+        "step": 500,
+        "defaultValue": 2000
+      }
+    ]
+  }
+}
